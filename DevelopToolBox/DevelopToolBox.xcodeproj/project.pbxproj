@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E01373661CD06BD30052E6AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373651CD06BD30052E6AA /* main.m */; };
+		E01373691CD06BD30052E6AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373681CD06BD30052E6AA /* AppDelegate.m */; };
+		E013736C1CD06BD30052E6AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E013736B1CD06BD30052E6AA /* ViewController.m */; };
+		E013736F1CD06BD30052E6AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E013736D1CD06BD30052E6AA /* Main.storyboard */; };
+		E01373721CD06BD30052E6AA /* DevelopToolBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E01373701CD06BD30052E6AA /* DevelopToolBox.xcdatamodeld */; };
+		E01373741CD06BD30052E6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01373731CD06BD30052E6AA /* Assets.xcassets */; };
+		E01373771CD06BD30052E6AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01373751CD06BD30052E6AA /* LaunchScreen.storyboard */; };
+		E01373821CD06BD30052E6AA /* DevelopToolBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373811CD06BD30052E6AA /* DevelopToolBoxTests.m */; };
+		E013738D1CD06BD30052E6AA /* DevelopToolBoxUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013738C1CD06BD30052E6AA /* DevelopToolBoxUITests.m */; };
+		E013739C1CD06BFF0052E6AA /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E013739B1CD06BFF0052E6AA /* PostViewController.m */; };
+		E013739F1CD06C0C0052E6AA /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E013739E1CD06C0C0052E6AA /* FontViewController.m */; };
+		E01373A31CD06C3B0052E6AA /* FHSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373A21CD06C3B0052E6AA /* FHSideMenuController.m */; };
+		E01373AD1CD08C680052E6AA /* FHTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373AC1CD08C680052E6AA /* FHTool.m */; };
+		E01373B11CD0934B0052E6AA /* FHClearMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373B01CD0934B0052E6AA /* FHClearMenuController.m */; };
+		E01373B41CD0C3320052E6AA /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373B31CD0C3320052E6AA /* UIView+Frame.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E013737E1CD06BD30052E6AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E01373591CD06BD30052E6AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E01373601CD06BD30052E6AA;
+			remoteInfo = DevelopToolBox;
+		};
+		E01373891CD06BD30052E6AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E01373591CD06BD30052E6AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E01373601CD06BD30052E6AA;
+			remoteInfo = DevelopToolBox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E01373611CD06BD30052E6AA /* DevelopToolBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevelopToolBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E01373651CD06BD30052E6AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E01373671CD06BD30052E6AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E01373681CD06BD30052E6AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E013736A1CD06BD30052E6AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E013736B1CD06BD30052E6AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E013736E1CD06BD30052E6AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E01373711CD06BD30052E6AA /* DevelopToolBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DevelopToolBox.xcdatamodel; sourceTree = "<group>"; };
+		E01373731CD06BD30052E6AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E01373761CD06BD30052E6AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E01373781CD06BD30052E6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E013737D1CD06BD30052E6AA /* DevelopToolBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevelopToolBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E01373811CD06BD30052E6AA /* DevelopToolBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevelopToolBoxTests.m; sourceTree = "<group>"; };
+		E01373831CD06BD30052E6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E01373881CD06BD30052E6AA /* DevelopToolBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevelopToolBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E013738C1CD06BD30052E6AA /* DevelopToolBoxUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevelopToolBoxUITests.m; sourceTree = "<group>"; };
+		E013738E1CD06BD30052E6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E013739A1CD06BFF0052E6AA /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		E013739B1CD06BFF0052E6AA /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		E013739D1CD06C0C0052E6AA /* FontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontViewController.h; sourceTree = "<group>"; };
+		E013739E1CD06C0C0052E6AA /* FontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontViewController.m; sourceTree = "<group>"; };
+		E01373A11CD06C3B0052E6AA /* FHSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHSideMenuController.h; sourceTree = "<group>"; };
+		E01373A21CD06C3B0052E6AA /* FHSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSideMenuController.m; sourceTree = "<group>"; };
+		E01373AB1CD08C680052E6AA /* FHTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHTool.h; sourceTree = "<group>"; };
+		E01373AC1CD08C680052E6AA /* FHTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHTool.m; sourceTree = "<group>"; };
+		E01373AF1CD0934B0052E6AA /* FHClearMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHClearMenuController.h; sourceTree = "<group>"; };
+		E01373B01CD0934B0052E6AA /* FHClearMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHClearMenuController.m; sourceTree = "<group>"; };
+		E01373B21CD0C3320052E6AA /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		E01373B31CD0C3320052E6AA /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E013735E1CD06BD30052E6AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E013737A1CD06BD30052E6AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01373851CD06BD30052E6AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E01373581CD06BD30052E6AA = {
+			isa = PBXGroup;
+			children = (
+				E01373631CD06BD30052E6AA /* DevelopToolBox */,
+				E01373801CD06BD30052E6AA /* DevelopToolBoxTests */,
+				E013738B1CD06BD30052E6AA /* DevelopToolBoxUITests */,
+				E01373621CD06BD30052E6AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E01373621CD06BD30052E6AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E01373611CD06BD30052E6AA /* DevelopToolBox.app */,
+				E013737D1CD06BD30052E6AA /* DevelopToolBoxTests.xctest */,
+				E01373881CD06BD30052E6AA /* DevelopToolBoxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E01373631CD06BD30052E6AA /* DevelopToolBox */ = {
+			isa = PBXGroup;
+			children = (
+				E01373AE1CD08C6B0052E6AA /* Tool */,
+				E01373A61CD06C540052E6AA /* SideMenuController */,
+				E01373A01CD06C150052E6AA /* MainToolControllers */,
+				E01373671CD06BD30052E6AA /* AppDelegate.h */,
+				E01373681CD06BD30052E6AA /* AppDelegate.m */,
+				E013736A1CD06BD30052E6AA /* ViewController.h */,
+				E013736B1CD06BD30052E6AA /* ViewController.m */,
+				E01373731CD06BD30052E6AA /* Assets.xcassets */,
+				E01373751CD06BD30052E6AA /* LaunchScreen.storyboard */,
+				E01373781CD06BD30052E6AA /* Info.plist */,
+				E01373701CD06BD30052E6AA /* DevelopToolBox.xcdatamodeld */,
+				E01373641CD06BD30052E6AA /* Supporting Files */,
+			);
+			path = DevelopToolBox;
+			sourceTree = "<group>";
+		};
+		E01373641CD06BD30052E6AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E013736D1CD06BD30052E6AA /* Main.storyboard */,
+				E01373651CD06BD30052E6AA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E01373801CD06BD30052E6AA /* DevelopToolBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				E01373811CD06BD30052E6AA /* DevelopToolBoxTests.m */,
+				E01373831CD06BD30052E6AA /* Info.plist */,
+			);
+			path = DevelopToolBoxTests;
+			sourceTree = "<group>";
+		};
+		E013738B1CD06BD30052E6AA /* DevelopToolBoxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E013738C1CD06BD30052E6AA /* DevelopToolBoxUITests.m */,
+				E013738E1CD06BD30052E6AA /* Info.plist */,
+			);
+			path = DevelopToolBoxUITests;
+			sourceTree = "<group>";
+		};
+		E01373A01CD06C150052E6AA /* MainToolControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E013739A1CD06BFF0052E6AA /* PostViewController.h */,
+				E013739B1CD06BFF0052E6AA /* PostViewController.m */,
+				E013739D1CD06C0C0052E6AA /* FontViewController.h */,
+				E013739E1CD06C0C0052E6AA /* FontViewController.m */,
+			);
+			name = MainToolControllers;
+			sourceTree = "<group>";
+		};
+		E01373A61CD06C540052E6AA /* SideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				E01373A11CD06C3B0052E6AA /* FHSideMenuController.h */,
+				E01373A21CD06C3B0052E6AA /* FHSideMenuController.m */,
+				E01373A71CD06C6D0052E6AA /* FHClearMenuController */,
+			);
+			name = SideMenuController;
+			sourceTree = "<group>";
+		};
+		E01373A71CD06C6D0052E6AA /* FHClearMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				E01373AF1CD0934B0052E6AA /* FHClearMenuController.h */,
+				E01373B01CD0934B0052E6AA /* FHClearMenuController.m */,
+			);
+			name = FHClearMenuController;
+			sourceTree = "<group>";
+		};
+		E01373AE1CD08C6B0052E6AA /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E01373AC1CD08C680052E6AA /* FHTool.m */,
+				E01373AB1CD08C680052E6AA /* FHTool.h */,
+				E01373B21CD0C3320052E6AA /* UIView+Frame.h */,
+				E01373B31CD0C3320052E6AA /* UIView+Frame.m */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E01373601CD06BD30052E6AA /* DevelopToolBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E01373911CD06BD30052E6AA /* Build configuration list for PBXNativeTarget "DevelopToolBox" */;
+			buildPhases = (
+				E013735D1CD06BD30052E6AA /* Sources */,
+				E013735E1CD06BD30052E6AA /* Frameworks */,
+				E013735F1CD06BD30052E6AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DevelopToolBox;
+			productName = DevelopToolBox;
+			productReference = E01373611CD06BD30052E6AA /* DevelopToolBox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E013737C1CD06BD30052E6AA /* DevelopToolBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E01373941CD06BD30052E6AA /* Build configuration list for PBXNativeTarget "DevelopToolBoxTests" */;
+			buildPhases = (
+				E01373791CD06BD30052E6AA /* Sources */,
+				E013737A1CD06BD30052E6AA /* Frameworks */,
+				E013737B1CD06BD30052E6AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E013737F1CD06BD30052E6AA /* PBXTargetDependency */,
+			);
+			name = DevelopToolBoxTests;
+			productName = DevelopToolBoxTests;
+			productReference = E013737D1CD06BD30052E6AA /* DevelopToolBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E01373871CD06BD30052E6AA /* DevelopToolBoxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E01373971CD06BD30052E6AA /* Build configuration list for PBXNativeTarget "DevelopToolBoxUITests" */;
+			buildPhases = (
+				E01373841CD06BD30052E6AA /* Sources */,
+				E01373851CD06BD30052E6AA /* Frameworks */,
+				E01373861CD06BD30052E6AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E013738A1CD06BD30052E6AA /* PBXTargetDependency */,
+			);
+			name = DevelopToolBoxUITests;
+			productName = DevelopToolBoxUITests;
+			productReference = E01373881CD06BD30052E6AA /* DevelopToolBoxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E01373591CD06BD30052E6AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = MADAO;
+				TargetAttributes = {
+					E01373601CD06BD30052E6AA = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					E013737C1CD06BD30052E6AA = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E01373601CD06BD30052E6AA;
+					};
+					E01373871CD06BD30052E6AA = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E01373601CD06BD30052E6AA;
+					};
+				};
+			};
+			buildConfigurationList = E013735C1CD06BD30052E6AA /* Build configuration list for PBXProject "DevelopToolBox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E01373581CD06BD30052E6AA;
+			productRefGroup = E01373621CD06BD30052E6AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E01373601CD06BD30052E6AA /* DevelopToolBox */,
+				E013737C1CD06BD30052E6AA /* DevelopToolBoxTests */,
+				E01373871CD06BD30052E6AA /* DevelopToolBoxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E013735F1CD06BD30052E6AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01373771CD06BD30052E6AA /* LaunchScreen.storyboard in Resources */,
+				E01373741CD06BD30052E6AA /* Assets.xcassets in Resources */,
+				E013736F1CD06BD30052E6AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E013737B1CD06BD30052E6AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01373861CD06BD30052E6AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E013735D1CD06BD30052E6AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E013736C1CD06BD30052E6AA /* ViewController.m in Sources */,
+				E013739F1CD06C0C0052E6AA /* FontViewController.m in Sources */,
+				E01373721CD06BD30052E6AA /* DevelopToolBox.xcdatamodeld in Sources */,
+				E01373691CD06BD30052E6AA /* AppDelegate.m in Sources */,
+				E01373661CD06BD30052E6AA /* main.m in Sources */,
+				E01373B11CD0934B0052E6AA /* FHClearMenuController.m in Sources */,
+				E01373A31CD06C3B0052E6AA /* FHSideMenuController.m in Sources */,
+				E013739C1CD06BFF0052E6AA /* PostViewController.m in Sources */,
+				E01373B41CD0C3320052E6AA /* UIView+Frame.m in Sources */,
+				E01373AD1CD08C680052E6AA /* FHTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01373791CD06BD30052E6AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01373821CD06BD30052E6AA /* DevelopToolBoxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01373841CD06BD30052E6AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E013738D1CD06BD30052E6AA /* DevelopToolBoxUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E013737F1CD06BD30052E6AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E01373601CD06BD30052E6AA /* DevelopToolBox */;
+			targetProxy = E013737E1CD06BD30052E6AA /* PBXContainerItemProxy */;
+		};
+		E013738A1CD06BD30052E6AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E01373601CD06BD30052E6AA /* DevelopToolBox */;
+			targetProxy = E01373891CD06BD30052E6AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E013736D1CD06BD30052E6AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E013736E1CD06BD30052E6AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E01373751CD06BD30052E6AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E01373761CD06BD30052E6AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E013738F1CD06BD30052E6AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E01373901CD06BD30052E6AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E01373921CD06BD30052E6AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DevelopToolBox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MADAO.DevelopToolBox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E01373931CD06BD30052E6AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DevelopToolBox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MADAO.DevelopToolBox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E01373951CD06BD30052E6AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DevelopToolBoxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MADAO.DevelopToolBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevelopToolBox.app/DevelopToolBox";
+			};
+			name = Debug;
+		};
+		E01373961CD06BD30052E6AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DevelopToolBoxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MADAO.DevelopToolBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DevelopToolBox.app/DevelopToolBox";
+			};
+			name = Release;
+		};
+		E01373981CD06BD30052E6AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DevelopToolBoxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MADAO.DevelopToolBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DevelopToolBox;
+			};
+			name = Debug;
+		};
+		E01373991CD06BD30052E6AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DevelopToolBoxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MADAO.DevelopToolBoxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DevelopToolBox;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E013735C1CD06BD30052E6AA /* Build configuration list for PBXProject "DevelopToolBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E013738F1CD06BD30052E6AA /* Debug */,
+				E01373901CD06BD30052E6AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E01373911CD06BD30052E6AA /* Build configuration list for PBXNativeTarget "DevelopToolBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E01373921CD06BD30052E6AA /* Debug */,
+				E01373931CD06BD30052E6AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E01373941CD06BD30052E6AA /* Build configuration list for PBXNativeTarget "DevelopToolBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E01373951CD06BD30052E6AA /* Debug */,
+				E01373961CD06BD30052E6AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E01373971CD06BD30052E6AA /* Build configuration list for PBXNativeTarget "DevelopToolBoxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E01373981CD06BD30052E6AA /* Debug */,
+				E01373991CD06BD30052E6AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E01373701CD06BD30052E6AA /* DevelopToolBox.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E01373711CD06BD30052E6AA /* DevelopToolBox.xcdatamodel */,
+			);
+			currentVersion = E01373711CD06BD30052E6AA /* DevelopToolBox.xcdatamodel */;
+			path = DevelopToolBox.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E01373591CD06BD30052E6AA /* Project object */;
+}
