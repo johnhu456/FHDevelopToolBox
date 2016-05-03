@@ -19,4 +19,5 @@
 
 @property (nonatomic, weak) UIViewController *centerViewController;
 
+- (void)handlePushNewCenterViewController:(UIViewController *)newController;
 @end

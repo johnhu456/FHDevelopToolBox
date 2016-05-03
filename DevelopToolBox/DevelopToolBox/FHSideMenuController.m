@@ -45,7 +45,6 @@ typedef NS_ENUM(NSUInteger){
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setupUIGestureRecognizer];
     
 }
@@ -58,6 +57,8 @@ typedef NS_ENUM(NSUInteger){
 
 - (void)setLeftViewController:(UIViewController *)leftViewController
 {
+    [_leftViewController removeFromParentViewController];
+    [_leftViewController.view removeFromSuperview];
     _leftViewController = leftViewController;
     [self addChildViewController:_leftViewController];
     [self.view addSubview:_leftViewController.view];
@@ -68,17 +69,24 @@ typedef NS_ENUM(NSUInteger){
 
 - (void)setCenterViewController:(UIViewController *)centerViewController
 {
+    CGRect lastFrame;
+
+    if (!_centerViewController) {
+        lastFrame = self.view.frame;
+    }
+    else
+    {
+        lastFrame = _centerViewController.view.frame;
+        [_centerViewController removeFromParentViewController];
+        _centerViewController.view.alpha = 0;
+        [_centerViewController.view removeFromSuperview];
+    }
     _centerViewController = centerViewController;
     [self addChildViewController:_centerViewController];
     [self.view addSubview:_centerViewController.view];
-    _centerViewController.view.frame = self.view.frame;
-    
+    _centerViewController.view.frame = lastFrame;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - GestureMethod
 
@@ -138,23 +146,23 @@ typedef NS_ENUM(NSUInteger){
     CGFloat currentCenterViewX = _centerViewController.view.x;
     if (_swipeDirection == FHSideMenuPanDirectionLeft) {
         if (currentCenterViewX <= (_maxSideWidth - 10)) {
-            [self handlePopMenuAnimation:panGesture];
+            [self handlePopMenuAnimation];
         }else{
-            [self handlePushMenuAnimation:panGesture];
+            [self handlePushMenuAnimation];
         }
     }
     else{
         if (currentCenterViewX >= ([FHTool getCurrentWindow].width - _maxSideWidth) * 1/4.f) {
-            [self handlePushMenuAnimation:panGesture];
+            [self handlePushMenuAnimation];
         }
         else
         {
-            [self handlePopMenuAnimation:panGesture];
+            [self handlePopMenuAnimation];
         }
     }
 }
 
-- (void)handlePopMenuAnimation:(UIPanGestureRecognizer *)panGesture{
+- (void)handlePopMenuAnimation{
     @WEAKSELF;
     [UIView animateWithDuration:_animationDuration delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         _centerViewController.view.x = 0;
@@ -164,7 +172,7 @@ typedef NS_ENUM(NSUInteger){
     }];
 }
 
-- (void)handlePushMenuAnimation:(UIPanGestureRecognizer *)panGesture{
+- (void)handlePushMenuAnimation{
     @WEAKSELF;
     [UIView animateWithDuration:_animationDuration delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         _centerViewController.view.x = _maxSideWidth;
@@ -172,8 +180,27 @@ typedef NS_ENUM(NSUInteger){
     } completion:^(BOOL finished) {
        weakSelf.showMenu = YES;
     }];
-    
-    
+}
+
+- (void)fakePushMenuAnimation{
+    @WEAKSELF;
+    _centerViewController.view.alpha = 0;
+    [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        _centerViewController.view.x += _springWidth;
+        _centerViewController.view.alpha = 1;
+    } completion:^(BOOL finished) {
+        _leftViewController.view.width -= _springWidth;
+        [weakSelf handlePopMenuAnimation];
+    }];
+}
+#pragma mark - Public Method
+- (void)handlePushNewCenterViewController:(UIViewController *)newController{
+    if(_centerViewController != newController){
+       self.centerViewController = newController;
+    }
+    [self fakePushMenuAnimation];
+
+
 }
 
 @end

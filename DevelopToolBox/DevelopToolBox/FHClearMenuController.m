@@ -89,18 +89,30 @@ static NSString *const cellReuseIdentifier = @"CellReuseIdentifier";
 
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *clearBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 30.f)];
+    clearBackgroundView.backgroundColor = [UIColor clearColor];
+    return clearBackgroundView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30.f;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FHSideMenuController *sideMenuController = (FHSideMenuController *)self.parentViewController;
 #warning to change CenterMenuController;
+    UIViewController *new = [[UIViewController alloc] init];
+    new.view.backgroundColor = [self randomColor];
+    [sideMenuController handlePushNewCenterViewController:new];
     
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UIColor *)randomColor{
+    return [UIColor colorWithRed:arc4random()%255/255.f green:arc4random()%255/255.f blue:arc4random()%255/255.f alpha:1];
 }
-
 /*
 #pragma mark - Navigation
 
