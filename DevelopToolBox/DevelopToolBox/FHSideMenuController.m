@@ -78,7 +78,6 @@ typedef NS_ENUM(NSUInteger){
     {
         lastFrame = _centerViewController.view.frame;
         [_centerViewController removeFromParentViewController];
-        _centerViewController.view.alpha = 0;
         [_centerViewController.view removeFromSuperview];
     }
     _centerViewController = centerViewController;
@@ -195,12 +194,13 @@ typedef NS_ENUM(NSUInteger){
 }
 #pragma mark - Public Method
 - (void)handlePushNewCenterViewController:(UIViewController *)newController{
+    [UIView animateWithDuration:0.5f animations:^{
+        _centerViewController.view.alpha = 0;
+    }];
     if(_centerViewController != newController){
        self.centerViewController = newController;
     }
     [self fakePushMenuAnimation];
-
-
 }
 
 @end
