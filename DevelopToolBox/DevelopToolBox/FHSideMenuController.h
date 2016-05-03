@@ -10,7 +10,9 @@
 
 @interface FHSideMenuController : UIViewController
 
-@property (nonatomic, assign) CGFloat sideWidth;
+@property (nonatomic, assign) CGFloat maxSideWidth;
+
+@property (nonatomic, assign) CGFloat animationDuration;
 
 /**可以选择使用FHClearMenuController或者自定义一个*/
 @property (nonatomic, weak) UIViewController *leftViewController;

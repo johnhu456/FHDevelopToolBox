@@ -19,9 +19,9 @@
 		E013739C1CD06BFF0052E6AA /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E013739B1CD06BFF0052E6AA /* PostViewController.m */; };
 		E013739F1CD06C0C0052E6AA /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E013739E1CD06C0C0052E6AA /* FontViewController.m */; };
 		E01373A31CD06C3B0052E6AA /* FHSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373A21CD06C3B0052E6AA /* FHSideMenuController.m */; };
-		E01373AD1CD08C680052E6AA /* FHTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373AC1CD08C680052E6AA /* FHTool.m */; };
 		E01373B11CD0934B0052E6AA /* FHClearMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373B01CD0934B0052E6AA /* FHClearMenuController.m */; };
 		E01373B41CD0C3320052E6AA /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E01373B31CD0C3320052E6AA /* UIView+Frame.m */; };
+		E052DC0A1CD8856300C8C175 /* FHTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E052DC091CD8856300C8C175 /* FHTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,12 +65,12 @@
 		E013739E1CD06C0C0052E6AA /* FontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontViewController.m; sourceTree = "<group>"; };
 		E01373A11CD06C3B0052E6AA /* FHSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHSideMenuController.h; sourceTree = "<group>"; };
 		E01373A21CD06C3B0052E6AA /* FHSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSideMenuController.m; sourceTree = "<group>"; };
-		E01373AB1CD08C680052E6AA /* FHTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHTool.h; sourceTree = "<group>"; };
-		E01373AC1CD08C680052E6AA /* FHTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHTool.m; sourceTree = "<group>"; };
 		E01373AF1CD0934B0052E6AA /* FHClearMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHClearMenuController.h; sourceTree = "<group>"; };
 		E01373B01CD0934B0052E6AA /* FHClearMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHClearMenuController.m; sourceTree = "<group>"; };
 		E01373B21CD0C3320052E6AA /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		E01373B31CD0C3320052E6AA /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		E052DC081CD8856300C8C175 /* FHTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHTool.h; sourceTree = "<group>"; };
+		E052DC091CD8856300C8C175 /* FHTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,8 +197,8 @@
 		E01373AE1CD08C6B0052E6AA /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				E01373AC1CD08C680052E6AA /* FHTool.m */,
-				E01373AB1CD08C680052E6AA /* FHTool.h */,
+				E052DC081CD8856300C8C175 /* FHTool.h */,
+				E052DC091CD8856300C8C175 /* FHTool.m */,
 				E01373B21CD0C3320052E6AA /* UIView+Frame.h */,
 				E01373B31CD0C3320052E6AA /* UIView+Frame.m */,
 			);
@@ -336,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E013736C1CD06BD30052E6AA /* ViewController.m in Sources */,
+				E052DC0A1CD8856300C8C175 /* FHTool.m in Sources */,
 				E013739F1CD06C0C0052E6AA /* FontViewController.m in Sources */,
 				E01373721CD06BD30052E6AA /* DevelopToolBox.xcdatamodeld in Sources */,
 				E01373691CD06BD30052E6AA /* AppDelegate.m in Sources */,
@@ -344,7 +345,6 @@
 				E01373A31CD06C3B0052E6AA /* FHSideMenuController.m in Sources */,
 				E013739C1CD06BFF0052E6AA /* PostViewController.m in Sources */,
 				E01373B41CD0C3320052E6AA /* UIView+Frame.m in Sources */,
-				E01373AD1CD08C680052E6AA /* FHTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +568,7 @@
 				E01373931CD06BD30052E6AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E01373941CD06BD30052E6AA /* Build configuration list for PBXNativeTarget "DevelopToolBoxTests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +577,7 @@
 				E01373961CD06BD30052E6AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E01373971CD06BD30052E6AA /* Build configuration list for PBXNativeTarget "DevelopToolBoxUITests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +586,7 @@
 				E01373991CD06BD30052E6AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
