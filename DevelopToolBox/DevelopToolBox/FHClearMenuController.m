@@ -80,6 +80,7 @@ static NSString *const cellReuseIdentifier = @"CellReuseIdentifier";
     if (menuCell == nil) {
         menuCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellReuseIdentifier];
         menuCell.backgroundColor = [UIColor clearColor];
+        menuCell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     id titleObj = _titleArray[indexPath.row];
     NSAssert([titleObj isKindOfClass:[NSString class]], @"The object in titleArrat must be  NSString type");
@@ -104,7 +105,6 @@ static NSString *const cellReuseIdentifier = @"CellReuseIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FHSideMenuController *sideMenuController = (FHSideMenuController *)self.parentViewController;
-#warning to change CenterMenuController;
     UIViewController *new = [[UIViewController alloc] init];
     new.view.backgroundColor = [self randomColor];
     [sideMenuController handlePushNewCenterViewController:new];

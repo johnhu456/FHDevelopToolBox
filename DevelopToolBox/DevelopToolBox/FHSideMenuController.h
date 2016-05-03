@@ -19,5 +19,6 @@
 
 @property (nonatomic, weak) UIViewController *centerViewController;
 
+/**切换主视图的主要方法，建议实现*/
 - (void)handlePushNewCenterViewController:(UIViewController *)newController;
 @end
