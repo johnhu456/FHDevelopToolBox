@@ -52,25 +52,27 @@
     for (NSString *familyName in self.fontFamilyArray) {
         NSArray *aFamily = [UIFont fontNamesForFamilyName:familyName];
         NSArray *aFamilySortedArray = [FHTool sortUsingDescriptorDictionary:@{[NSNull null]:@YES} withArray:aFamily];
-        if (aFamilySortedArray.count) {
-            [resultArray addObject:aFamilySortedArray];
+        if (!aFamilySortedArray.count) {
+            aFamilySortedArray = @[familyName];
         }
+        [resultArray addObject:aFamilySortedArray];
     }
     self.fontArray = resultArray;
-    NSLog(@"%@",self.fontArray);
 }
 
 - (void)getFirstCharacterArray{
     NSMutableDictionary *mutaTitleToIndexDictionary = [[NSMutableDictionary alloc] init];
     NSMutableArray *firstCharacterArray = [[NSMutableArray alloc] init];
+    NSInteger sectionCount = 0;
     for (NSString *familyName in self.fontFamilyArray ) {
         unichar firstCharacterChar = [familyName characterAtIndex:0];
         NSString *firstCharacterStr = [NSString stringWithFormat:@"%c",firstCharacterChar];
         //防止重复character的插入
         if (![firstCharacterStr isEqualToString:[firstCharacterArray lastObject]]) {
             [firstCharacterArray addObject:firstCharacterStr];
-            [mutaTitleToIndexDictionary setObject:[NSNumber numberWithInteger:[self.fontFamilyArray indexOfObject:familyName]] forKey:firstCharacterStr];
+            [mutaTitleToIndexDictionary setObject:[NSNumber numberWithInteger:sectionCount] forKey:firstCharacterStr];
         }
+        sectionCount++;
     }
     self.firstCharacterArray = [firstCharacterArray copy];
     self.titleToIndexDictionary = mutaTitleToIndexDictionary;
@@ -118,7 +120,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 
 {
-    return @"A";
+    return [NSString stringWithFormat:@"%ld",(long)section];
 //    NSArray *arrayOfCharacters = [self sectionIndexTitlesForTableView:self.mainFontTableView];
 //    return [self.characterArray objectAtIndex:section];
     
