@@ -8,7 +8,7 @@
 
 #import "FHClearMenuController.h"
 #import "FHSideMenuController.h"
-
+#import "FontViewController.h"
 
 static NSString *const cellReuseIdentifier = @"CellReuseIdentifier";
 
@@ -105,9 +105,23 @@ static NSString *const cellReuseIdentifier = @"CellReuseIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FHSideMenuController *sideMenuController = (FHSideMenuController *)self.parentViewController;
-    UIViewController *new = [[UIViewController alloc] init];
-    new.view.backgroundColor = [self randomColor];
-    [sideMenuController handlePushNewCenterViewController:new];
+    switch (indexPath.row) {
+        case 0:
+        {
+            FontViewController *fontVC = [[FontViewController alloc] init];
+            UINavigationController *fontNavigationController = [[UINavigationController alloc] initWithRootViewController:fontVC];
+            [sideMenuController handlePushNewCenterViewController:fontNavigationController];
+        }
+        break;
+            
+        default:
+        {
+            UIViewController *new = [[UIViewController alloc] init];
+            new.view.backgroundColor = [self randomColor];
+            [sideMenuController handlePushNewCenterViewController:new];
+        }
+            break;
+    }
     
 }
 - (UIColor *)randomColor{

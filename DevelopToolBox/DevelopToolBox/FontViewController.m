@@ -7,8 +7,22 @@
 //
 
 #import "FontViewController.h"
+#import "FHTool.h"
 
-@interface FontViewController ()
+@interface FontViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+#warning may need to change
+@property (nonatomic, strong) NSArray *fontFamilyArray;
+
+@property (nonatomic, strong) NSArray *fontArray;
+
+@property (nonatomic, strong) NSArray *firstCharacterArray;
+
+/**记录字母索引对应Section的关系*/
+@property (nonatomic, strong) NSDictionary *titleToIndexDictionary;
+
+@property (nonatomic, strong) UITableView *mainFontTableView;
+
 
 @end
 
@@ -16,14 +30,99 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"All Font";
+    [self setupMainTableView];
+    [self getAscendFontArray];
+    [self getFirstCharacterArray];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupMainTableView
+{
+    self.mainFontTableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    self.mainFontTableView.delegate = self;
+    self.mainFontTableView.dataSource = self;
+    [self.view addSubview:self.mainFontTableView];
 }
 
+- (void)getAscendFontArray
+{
+    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
+    NSArray *familyArray= [UIFont familyNames];
+    self.fontFamilyArray = [FHTool sortUsingDescriptorDictionary:@{[NSNull null]:@YES} withArray:familyArray];
+    for (NSString *familyName in self.fontFamilyArray) {
+        NSArray *aFamily = [UIFont fontNamesForFamilyName:familyName];
+        NSArray *aFamilySortedArray = [FHTool sortUsingDescriptorDictionary:@{[NSNull null]:@YES} withArray:aFamily];
+        if (aFamilySortedArray.count) {
+            [resultArray addObject:aFamilySortedArray];
+        }
+    }
+    self.fontArray = resultArray;
+    NSLog(@"%@",self.fontArray);
+}
+
+- (void)getFirstCharacterArray{
+    NSMutableDictionary *mutaTitleToIndexDictionary = [[NSMutableDictionary alloc] init];
+    NSMutableArray *firstCharacterArray = [[NSMutableArray alloc] init];
+    for (NSString *familyName in self.fontFamilyArray ) {
+        unichar firstCharacterChar = [familyName characterAtIndex:0];
+        NSString *firstCharacterStr = [NSString stringWithFormat:@"%c",firstCharacterChar];
+        //防止重复character的插入
+        if (![firstCharacterStr isEqualToString:[firstCharacterArray lastObject]]) {
+            [firstCharacterArray addObject:firstCharacterStr];
+            [mutaTitleToIndexDictionary setObject:[NSNumber numberWithInteger:[self.fontFamilyArray indexOfObject:familyName]] forKey:firstCharacterStr];
+        }
+    }
+    self.firstCharacterArray = [firstCharacterArray copy];
+    self.titleToIndexDictionary = mutaTitleToIndexDictionary;
+
+}
+#pragma mark - UITableViewDataSourceAndDelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.fontArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSArray *aFamily = self.fontArray[section];
+    return aFamily.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainCell"];
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mainCell"];
+    }
+    NSArray *aFamily = self.fontArray[indexPath.section];
+    cell.textLabel.text = aFamily[indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:aFamily[indexPath.row] size:20];
+    return cell;
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+
+{
+    return self.firstCharacterArray;
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+
+{
+    return [[self.titleToIndexDictionary objectForKey:title] integerValue];
+    
+}
+//
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+
+{
+    return @"A";
+//    NSArray *arrayOfCharacters = [self sectionIndexTitlesForTableView:self.mainFontTableView];
+//    return [self.characterArray objectAtIndex:section];
+    
+}
 /*
 #pragma mark - Navigation
 

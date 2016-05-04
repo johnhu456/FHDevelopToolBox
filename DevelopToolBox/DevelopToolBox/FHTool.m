@@ -26,4 +26,19 @@
     }
 }
 
++ (NSArray *)sortUsingDescriptorDictionary:(NSDictionary *)descriptorDic withArray:(NSArray *)sortArray;
+{
+    NSMutableArray *descriptorArray = [[NSMutableArray alloc] init];
+    for (NSString *key in descriptorDic.allKeys) {
+        NSSortDescriptor *newDescriptor;
+        if ([key isKindOfClass:[NSNull class]]) {
+            newDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:[descriptorDic[key] boolValue]];
+        }else{
+            newDescriptor = [NSSortDescriptor sortDescriptorWithKey:key ascending:[descriptorDic[key] boolValue]];
+        }
+        [descriptorArray addObject:newDescriptor];
+    }
+    return [sortArray sortedArrayUsingDescriptors:[descriptorArray copy]];
+}
+
 @end

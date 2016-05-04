@@ -75,4 +75,8 @@ __weak typeof(self) weakSelf = self
 /**获取对象所有的Value值，打印输出*/
 + (void)getAllIvarValueWithObject:(id)obj;
 
+#pragma makr - NSArraySort
+/**排列数组*/
++ (NSArray *)sortUsingDescriptorDictionary:(NSDictionary *)descriptorDic withArray:(NSArray *)sortArray;
+
 @end
