@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FontViewController : UIViewController
+@interface FontViewController : UITableViewController
 
 @end

@@ -11,9 +11,10 @@
 
 static CGFloat const cellHeight = 60.f;
 
-@interface FontViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface FontViewController ()<UISearchBarDelegate,UISearchDisplayDelegate>
 
 #warning may need to change
+
 @property (nonatomic, strong) NSArray *fontFamilyArray;
 
 @property (nonatomic, strong) NSArray *fontArray;
@@ -23,10 +24,16 @@ static CGFloat const cellHeight = 60.f;
 /**记录字母索引对应Section的关系*/
 @property (nonatomic, strong) NSDictionary *titleToIndexDictionary;
 
-@property (nonatomic, strong) UITableView *mainFontTableView;
+//@property (nonatomic, strong) UITableView *tableView
 
 /**示例文字*/
 @property (nonatomic, strong) NSString *sampleText;
+
+//==========AboutSearch==================
+
+@property (nonatomic, strong) NSArray *searchedFamilyArray;
+
+@property (nonatomic, strong) NSArray *searchedFontArray;
 
 @end
 
@@ -35,8 +42,8 @@ static CGFloat const cellHeight = 60.f;
 - (void)setSampleText:(NSString *)sampleText
 {
     _sampleText = sampleText;
-    if (self.mainFontTableView) {
-        [self.mainFontTableView reloadData];
+    if (self.tableView) {
+        [self.tableView reloadData];
     }
 }
 
@@ -52,10 +59,22 @@ static CGFloat const cellHeight = 60.f;
 
 - (void)setupMainTableView
 {
-    self.mainFontTableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
-    self.mainFontTableView.delegate = self;
-    self.mainFontTableView.dataSource = self;
-    [self.view addSubview:self.mainFontTableView];
+//    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
+    
+    
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 375, 44)];
+    searchBar.delegate = self;
+    self.tableView.tableHeaderView = searchBar;
+    UISearchDisplayController *displayConytol = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    displayConytol.delegate = self;
+    displayConytol.searchResultsDelegate = self;
+    displayConytol.searchResultsDataSource = self;
+    NSLog(@"%@ 和%@",displayConytol, self.searchDisplayController);
+    
+//    
+//    [self.view addSubview:self.tableView];
 }
 
 - (void)getAscendFontArray
@@ -102,12 +121,24 @@ static CGFloat const cellHeight = 60.f;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.fontArray.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return self.searchedFamilyArray.count;
+    }
+    else
+    {
+        return self.fontArray.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray *aFamily = self.fontArray[section];
+    NSArray *aFamily;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        aFamily = self.searchedFontArray[section];
+    }
+    else{
+       aFamily = self.fontArray[section];
+    }
     return aFamily.count;
 }
 
@@ -117,7 +148,14 @@ static CGFloat const cellHeight = 60.f;
     if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"mainCell"];
     }
-    NSArray *aFamily = self.fontArray[indexPath.section];
+    NSArray *aFamily;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        aFamily = self.searchedFontArray[indexPath.section];
+
+    }
+    else{
+        aFamily = self.fontArray[indexPath.section];
+    }
     cell.textLabel.text = self.sampleText;
     cell.detailTextLabel.text = aFamily[indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:aFamily[indexPath.row] size:20];
@@ -148,6 +186,27 @@ static CGFloat const cellHeight = 60.f;
     return self.fontFamilyArray[section];
     
 }
+
+#pragma mark - SearchDelegate
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:YES animated:YES];
+    [self.searchDisplayController setActive:YES animated:YES];
+    return YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [self.searchDisplayController setActive:NO animated:YES];
+}
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    NSLog(@"%@",searchString);
+    return YES;
+}
+
+
 
 #pragma mark - ACtions
 - (void)handleChangeTextButtonOnClicked
