@@ -10,4 +10,8 @@
 
 @interface FontDetailViewController : UIViewController
 
+@property (nonatomic, strong, readonly) NSString *fontName;
+
+- (instancetype)initWithFontName:(NSString *)fontName;
+
 @end

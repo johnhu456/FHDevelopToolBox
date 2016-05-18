@@ -9,6 +9,7 @@
 #import "FontViewController.h"
 #import "FHTool.h"
 #import "FontSearchResultViewController.h"
+#import "FontDetailViewController.h"
 
 static CGFloat const kCellHeight = 60.f;
 
@@ -57,7 +58,6 @@ static CGFloat const kCellHeight = 60.f;
     self.sampleText = @"SampleText";
     
     [self setupSearchController];
-//    [self setupMainTableView];
     [self getAscendFontArray];
     [self getFirstCharacterArray];
     [self setupRightNavigationBarButton];
@@ -72,15 +72,9 @@ static CGFloat const kCellHeight = 60.f;
     self.tableView.tableHeaderView = self.searchViewController.searchBar;
     self.searchViewController.searchResultsUpdater = self;
     self.searchViewController.searchBar.delegate = self;
+    self.searchResultViewController.mainSearchController = self;
     self.definesPresentationContext = YES;
 }
-
-//- (void)setupMainTableView
-//{
-//    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [FHTool getWindowHeight], 44)];
-//    searchBar.delegate = self;
-//    self.tableView.tableHeaderView = searchBar;
-//}
 
 - (void)getAscendFontArray
 {
@@ -168,6 +162,14 @@ static CGFloat const kCellHeight = 60.f;
     return self.fontFamilyArray[section];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    NSArray *aFamily = self.fontArray[indexPath.section];
+    NSString *fontName = aFamily[indexPath.row];
+    FontDetailViewController *detailViewController = [[FontDetailViewController alloc] initWithFontName:fontName];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 #pragma mark - ACtions
 - (void)handleChangeTextButtonOnClicked
 {
@@ -191,7 +193,6 @@ static CGFloat const kCellHeight = 60.f;
 }
 
 #pragma mark - UISearchResultUpdating
-
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
     NSMutableArray *searchResultArray = [[NSMutableArray alloc] init];

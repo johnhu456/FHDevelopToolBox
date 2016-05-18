@@ -10,9 +10,24 @@
 
 @interface FontDetailViewController ()
 
+@property (nonatomic, strong, readwrite) NSString *fontName;
 @end
 
 @implementation FontDetailViewController
+
+- (void)setFontName:(NSString *)fontName
+{
+    self.title = fontName;
+}
+
+- (instancetype)initWithFontName:(NSString *)fontName
+{
+    if (self = [super init])
+    {
+        self.fontName = fontName;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

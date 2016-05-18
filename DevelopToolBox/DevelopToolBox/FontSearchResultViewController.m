@@ -7,6 +7,7 @@
 //
 
 #import "FontSearchResultViewController.h"
+#import "FontDetailViewController.h"
 
 @interface FontSearchResultViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -55,19 +56,16 @@
     return  cell;
 
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *fontName = self.resultDataArray[indexPath.row];
+    FontDetailViewController *detailViewController = [[FontDetailViewController alloc] initWithFontName:fontName];
+    [self.mainViewController.navigationController pushViewController:detailViewController animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
