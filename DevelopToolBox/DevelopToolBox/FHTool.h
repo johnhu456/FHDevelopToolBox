@@ -72,6 +72,13 @@ __weak typeof(self) weakSelf = self
 /**获取当前Window对象*/
 + (UIWindow *)getCurrentWindow;
 
+/**获取屏幕宽度*/
++ (CGFloat)getWindowWidth;
+
+/**获取屏幕高度*/
+
++ (CGFloat)getWindowHeight;
+
 /**获取对象所有的Value值，打印输出*/
 + (void)getAllIvarValueWithObject:(id)obj;
 

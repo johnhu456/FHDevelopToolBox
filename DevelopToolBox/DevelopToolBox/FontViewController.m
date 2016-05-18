@@ -8,12 +8,16 @@
 
 #import "FontViewController.h"
 #import "FHTool.h"
+#import "FontSearchResultViewController.h"
 
-static CGFloat const cellHeight = 60.f;
+static CGFloat const kCellHeight = 60.f;
 
-@interface FontViewController ()<UISearchBarDelegate,UISearchDisplayDelegate>
+@interface FontViewController ()<UISearchResultsUpdating,UISearchBarDelegate>
 
-#warning may need to change
+/**搜索结果ViewController*/
+@property (nonatomic, strong) FontSearchResultViewController *searchResultViewController;
+
+@property (nonatomic, strong) UISearchController *searchViewController;
 
 @property (nonatomic, strong) NSArray *fontFamilyArray;
 
@@ -29,8 +33,8 @@ static CGFloat const cellHeight = 60.f;
 /**示例文字*/
 @property (nonatomic, strong) NSString *sampleText;
 
-//==========AboutSearch==================
 
+//==========AboutSearch==================
 @property (nonatomic, strong) NSArray *searchedFamilyArray;
 
 @property (nonatomic, strong) NSArray *searchedFontArray;
@@ -51,31 +55,32 @@ static CGFloat const cellHeight = 60.f;
     [super viewDidLoad];
     self.title = @"All Font";
     self.sampleText = @"SampleText";
-    [self setupMainTableView];
+    
+    [self setupSearchController];
+//    [self setupMainTableView];
     [self getAscendFontArray];
     [self getFirstCharacterArray];
     [self setupRightNavigationBarButton];
 }
 
-- (void)setupMainTableView
+- (void)setupSearchController
 {
-//    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
+    self.searchResultViewController = [[FontSearchResultViewController alloc] init];
+    self.searchViewController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultViewController];
+    [self.searchViewController.searchBar sizeToFit];
     
-    
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 375, 44)];
-    searchBar.delegate = self;
-    self.tableView.tableHeaderView = searchBar;
-    UISearchDisplayController *displayConytol = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
-    displayConytol.delegate = self;
-    displayConytol.searchResultsDelegate = self;
-    displayConytol.searchResultsDataSource = self;
-    NSLog(@"%@ 和%@",displayConytol, self.searchDisplayController);
-    
-//    
-//    [self.view addSubview:self.tableView];
+    self.tableView.tableHeaderView = self.searchViewController.searchBar;
+    self.searchViewController.searchResultsUpdater = self;
+    self.searchViewController.searchBar.delegate = self;
+    self.definesPresentationContext = YES;
 }
+
+//- (void)setupMainTableView
+//{
+//    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [FHTool getWindowHeight], 44)];
+//    searchBar.delegate = self;
+//    self.tableView.tableHeaderView = searchBar;
+//}
 
 - (void)getAscendFontArray
 {
@@ -121,24 +126,12 @@ static CGFloat const cellHeight = 60.f;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return self.searchedFamilyArray.count;
-    }
-    else
-    {
-        return self.fontArray.count;
-    }
+    return self.fontArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray *aFamily;
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        aFamily = self.searchedFontArray[section];
-    }
-    else{
-       aFamily = self.fontArray[section];
-    }
+    NSArray *aFamily = self.fontArray[section];
     return aFamily.count;
 }
 
@@ -148,14 +141,7 @@ static CGFloat const cellHeight = 60.f;
     if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"mainCell"];
     }
-    NSArray *aFamily;
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        aFamily = self.searchedFontArray[indexPath.section];
-
-    }
-    else{
-        aFamily = self.fontArray[indexPath.section];
-    }
+    NSArray *aFamily = self.fontArray[indexPath.section];
     cell.textLabel.text = self.sampleText;
     cell.detailTextLabel.text = aFamily[indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:aFamily[indexPath.row] size:20];
@@ -164,49 +150,23 @@ static CGFloat const cellHeight = 60.f;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return cellHeight;
+    return kCellHeight;
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-
 {
     return self.firstCharacterArray;
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-
 {
     return [[self.titleToIndexDictionary objectForKey:title] integerValue];
-    
 }
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return self.fontFamilyArray[section];
-    
 }
-
-#pragma mark - SearchDelegate
--(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
-{
-    [searchBar setShowsCancelButton:YES animated:YES];
-    [self.searchDisplayController setActive:YES animated:YES];
-    return YES;
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    [searchBar setShowsCancelButton:NO animated:YES];
-    [self.searchDisplayController setActive:NO animated:YES];
-}
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    NSLog(@"%@",searchString);
-    return YES;
-}
-
-
 
 #pragma mark - ACtions
 - (void)handleChangeTextButtonOnClicked
@@ -229,14 +189,21 @@ static CGFloat const cellHeight = 60.f;
     [changeTextAlertController addAction:cancelAction];
     [self presentViewController:changeTextAlertController animated:YES completion:nil];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UISearchResultUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    NSMutableArray *searchResultArray = [[NSMutableArray alloc] init];
+    NSString *searchString = searchController.searchBar.text;
+    for (NSArray *family in self.fontArray) {
+        for (NSString *fontName in family) {
+            NSRange resultRange = [fontName rangeOfString:searchString];
+            if (resultRange.length > 0){
+                [searchResultArray addObject:fontName];
+            }
+        }
+    }
+    self.searchResultViewController.resultDataArray = searchResultArray;
 }
-*/
-
 @end

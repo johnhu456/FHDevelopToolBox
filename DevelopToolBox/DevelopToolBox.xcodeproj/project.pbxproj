@@ -25,6 +25,7 @@
 		E052DC0A1CD8856300C8C175 /* FHTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E052DC091CD8856300C8C175 /* FHTool.m */; };
 		E052DC101CDAF49100C8C175 /* FontDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E052DC0E1CDAF49100C8C175 /* FontDetailViewController.m */; };
 		E052DC111CDAF49100C8C175 /* FontDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E052DC0F1CDAF49100C8C175 /* FontDetailViewController.xib */; };
+		E0549FF31CEC54E8007654B9 /* FontSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0549FF21CEC54E8007654B9 /* FontSearchResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		E052DC0D1CDAF49100C8C175 /* FontDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontDetailViewController.h; sourceTree = "<group>"; };
 		E052DC0E1CDAF49100C8C175 /* FontDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontDetailViewController.m; sourceTree = "<group>"; };
 		E052DC0F1CDAF49100C8C175 /* FontDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontDetailViewController.xib; sourceTree = "<group>"; };
+		E0549FF11CEC54E8007654B9 /* FontSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSearchResultViewController.h; sourceTree = "<group>"; };
+		E0549FF21CEC54E8007654B9 /* FontSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSearchResultViewController.m; sourceTree = "<group>"; };
 		EE00CDA4ACFB5E660FB1F0E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -237,6 +240,8 @@
 			children = (
 				E013739D1CD06C0C0052E6AA /* FontViewController.h */,
 				E013739E1CD06C0C0052E6AA /* FontViewController.m */,
+				E0549FF11CEC54E8007654B9 /* FontSearchResultViewController.h */,
+				E0549FF21CEC54E8007654B9 /* FontSearchResultViewController.m */,
 				E052DC0D1CDAF49100C8C175 /* FontDetailViewController.h */,
 				E052DC0E1CDAF49100C8C175 /* FontDetailViewController.m */,
 				E052DC0F1CDAF49100C8C175 /* FontDetailViewController.xib */,
@@ -436,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0549FF31CEC54E8007654B9 /* FontSearchResultViewController.m in Sources */,
 				E013736C1CD06BD30052E6AA /* ViewController.m in Sources */,
 				E052DC0A1CD8856300C8C175 /* FHTool.m in Sources */,
 				E013739F1CD06C0C0052E6AA /* FontViewController.m in Sources */,

@@ -16,6 +16,16 @@
     return window;
 }
 
++ (CGFloat)getWindowWidth
+{
+    return [[self class] getCurrentWindow].frame.size.width;
+}
+
++ (CGFloat)getWindowHeight
+{
+    return [[self class] getCurrentWindow].frame.size.height;
+}
+
 + (void)getAllIvarValueWithObject:(id)obj
 {
     unsigned int count1 = 0;
