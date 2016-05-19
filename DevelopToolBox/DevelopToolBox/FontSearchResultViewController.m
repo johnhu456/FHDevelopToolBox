@@ -61,7 +61,7 @@
 {
     NSString *fontName = self.resultDataArray[indexPath.row];
     FontDetailViewController *detailViewController = [[FontDetailViewController alloc] initWithFontName:fontName];
-    [self.mainViewController.navigationController pushViewController:detailViewController animated:YES];
+    [self.mainSearchController.navigationController pushViewController:detailViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -26,6 +26,7 @@
 		E052DC101CDAF49100C8C175 /* FontDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E052DC0E1CDAF49100C8C175 /* FontDetailViewController.m */; };
 		E052DC111CDAF49100C8C175 /* FontDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E052DC0F1CDAF49100C8C175 /* FontDetailViewController.xib */; };
 		E0549FF31CEC54E8007654B9 /* FontSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0549FF21CEC54E8007654B9 /* FontSearchResultViewController.m */; };
+		E0549FF61CEDA0B3007654B9 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E0549FF51CEDA0B3007654B9 /* UIBarButtonItem+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		E052DC0F1CDAF49100C8C175 /* FontDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontDetailViewController.xib; sourceTree = "<group>"; };
 		E0549FF11CEC54E8007654B9 /* FontSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSearchResultViewController.h; sourceTree = "<group>"; };
 		E0549FF21CEC54E8007654B9 /* FontSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSearchResultViewController.m; sourceTree = "<group>"; };
+		E0549FF41CEDA0B3007654B9 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		E0549FF51CEDA0B3007654B9 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		EE00CDA4ACFB5E660FB1F0E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -231,6 +234,8 @@
 				E052DC091CD8856300C8C175 /* FHTool.m */,
 				E01373B21CD0C3320052E6AA /* UIView+Frame.h */,
 				E01373B31CD0C3320052E6AA /* UIView+Frame.m */,
+				E0549FF41CEDA0B3007654B9 /* UIBarButtonItem+Extension.h */,
+				E0549FF51CEDA0B3007654B9 /* UIBarButtonItem+Extension.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 				E052DC101CDAF49100C8C175 /* FontDetailViewController.m in Sources */,
 				E01373B11CD0934B0052E6AA /* FHClearMenuController.m in Sources */,
 				E01373A31CD06C3B0052E6AA /* FHSideMenuController.m in Sources */,
+				E0549FF61CEDA0B3007654B9 /* UIBarButtonItem+Extension.m in Sources */,
 				E013739C1CD06BFF0052E6AA /* PostViewController.m in Sources */,
 				E01373B41CD0C3320052E6AA /* UIView+Frame.m in Sources */,
 			);

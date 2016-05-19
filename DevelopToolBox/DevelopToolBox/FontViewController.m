@@ -7,9 +7,11 @@
 //
 
 #import "FontViewController.h"
-#import "FHTool.h"
 #import "FontSearchResultViewController.h"
 #import "FontDetailViewController.h"
+
+#import "FHTool.h"
+#import "UIBarButtonItem+Extension.h"
 
 static CGFloat const kCellHeight = 60.f;
 
@@ -108,14 +110,20 @@ static CGFloat const kCellHeight = 60.f;
     }
     self.firstCharacterArray = [firstCharacterArray copy];
     self.titleToIndexDictionary = mutaTitleToIndexDictionary;
-
 }
 
 - (void)setupRightNavigationBarButton
 {
-    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"更改文字" style:UIBarButtonItemStyleDone target:self action:@selector(handleChangeTextButtonOnClicked)];
-    self.navigationItem.rightBarButtonItem = rightBarItem;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = FH_COLOR_WITH(0x27, 0x26, 0x36, 1);
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    UIBarButtonItem *rightBarEditItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_rightNavi_edit"] style:UIBarButtonItemStyleDone target:self action:@selector(handleChangeTextButtonOnClicked)];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
+    [self.navigationItem.rightBarButtonItem setWidth:30];
+     
+    self.navigationItem.rightBarButtonItem = rightBarEditItem;
 }
+
 #pragma mark - UITableViewDataSourceAndDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
