@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
+
+#import "DEVNavigationController.h"
 #import "FHSideMenuController.h"
 #import "FHClearMenuController.h"
-#import "ViewController.h"
+#import "FontViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,9 +26,12 @@
     
     FHSideMenuController *sideMenuController = [[FHSideMenuController alloc] init];
     FHClearMenuController *leftClearMenu = [[FHClearMenuController alloc] initWithMenuTitleArray:@[@"Post",@"Font"]];
-    ViewController *centerViewController = [[ViewController alloc] init];
+    
+    FontViewController *centerViewController = [[FontViewController alloc] init];
+    DEVNavigationController *naviController =[[DEVNavigationController alloc] initWithRootViewController:centerViewController];
+
     [sideMenuController setLeftViewController:leftClearMenu];
-    [sideMenuController setCenterViewController:centerViewController];
+    [sideMenuController setCenterViewController:naviController];
     
     self.window.rootViewController = sideMenuController;
     

@@ -108,9 +108,15 @@ static NSString *const cellReuseIdentifier = @"CellReuseIdentifier";
     switch (indexPath.row) {
         case 0:
         {
-            FontViewController *fontVC = [[FontViewController alloc] init];
-            UINavigationController *fontNavigationController = [[UINavigationController alloc] initWithRootViewController:fontVC];
-            [sideMenuController handlePushNewCenterViewController:fontNavigationController];
+            if ([sideMenuController.centerViewController isKindOfClass:[FontViewController class]]){
+                return;
+            }
+            else{
+                FontViewController *fontVC = [[FontViewController alloc] init];
+                UINavigationController *fontNavigationController = [[UINavigationController alloc] initWithRootViewController:fontVC];
+                [sideMenuController handlePushNewCenterViewController:fontNavigationController];
+            }
+
         }
         break;
             

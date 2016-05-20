@@ -27,6 +27,7 @@
 		E052DC111CDAF49100C8C175 /* FontDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E052DC0F1CDAF49100C8C175 /* FontDetailViewController.xib */; };
 		E0549FF31CEC54E8007654B9 /* FontSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0549FF21CEC54E8007654B9 /* FontSearchResultViewController.m */; };
 		E0549FF61CEDA0B3007654B9 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E0549FF51CEDA0B3007654B9 /* UIBarButtonItem+Extension.m */; };
+		E054A03E1CEEAF55007654B9 /* DEVNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E054A03D1CEEAF55007654B9 /* DEVNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		E0549FF21CEC54E8007654B9 /* FontSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSearchResultViewController.m; sourceTree = "<group>"; };
 		E0549FF41CEDA0B3007654B9 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		E0549FF51CEDA0B3007654B9 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		E054A03C1CEEAF55007654B9 /* DEVNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEVNavigationController.h; sourceTree = "<group>"; };
+		E054A03D1CEEAF55007654B9 /* DEVNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEVNavigationController.m; sourceTree = "<group>"; };
 		EE00CDA4ACFB5E660FB1F0E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -202,6 +205,7 @@
 		E01373A01CD06C150052E6AA /* MainToolControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E054A03B1CEEAF29007654B9 /* Navi */,
 				E052DC0C1CDAF44600C8C175 /* Post */,
 				E052DC0B1CDAF43B00C8C175 /* Font */,
 			);
@@ -261,6 +265,15 @@
 				E013739B1CD06BFF0052E6AA /* PostViewController.m */,
 			);
 			name = Post;
+			sourceTree = "<group>";
+		};
+		E054A03B1CEEAF29007654B9 /* Navi */ = {
+			isa = PBXGroup;
+			children = (
+				E054A03C1CEEAF55007654B9 /* DEVNavigationController.h */,
+				E054A03D1CEEAF55007654B9 /* DEVNavigationController.m */,
+			);
+			name = Navi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +472,7 @@
 				E0549FF61CEDA0B3007654B9 /* UIBarButtonItem+Extension.m in Sources */,
 				E013739C1CD06BFF0052E6AA /* PostViewController.m in Sources */,
 				E01373B41CD0C3320052E6AA /* UIView+Frame.m in Sources */,
+				E054A03E1CEEAF55007654B9 /* DEVNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

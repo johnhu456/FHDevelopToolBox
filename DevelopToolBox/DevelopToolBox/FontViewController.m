@@ -13,7 +13,7 @@
 #import "FHTool.h"
 #import "UIBarButtonItem+Extension.h"
 
-static CGFloat const kCellHeight = 60.f;
+static CGFloat const kCellHeight = 90.f;
 
 @interface FontViewController ()<UISearchResultsUpdating,UISearchBarDelegate>
 
@@ -114,13 +114,13 @@ static CGFloat const kCellHeight = 60.f;
 
 - (void)setupRightNavigationBarButton
 {
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = FH_COLOR_WITH(0x27, 0x26, 0x36, 1);
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    UIBarButtonItem *leftBarbuttonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_leftNavi_menu"] style:UIBarButtonItemStyleDone target:self action:@selector(handleLeftBarbuttonItemOnClicked:)];
+    [self.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
+    self.navigationItem.leftBarButtonItem = leftBarbuttonItem;
+//    [self.navigationItem.leftBarButtonItem setWidth:30];
+    
     UIBarButtonItem *rightBarEditItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_rightNavi_edit"] style:UIBarButtonItemStyleDone target:self action:@selector(handleChangeTextButtonOnClicked)];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
-    [self.navigationItem.rightBarButtonItem setWidth:30];
-     
     self.navigationItem.rightBarButtonItem = rightBarEditItem;
 }
 
@@ -179,6 +179,10 @@ static CGFloat const kCellHeight = 60.f;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 #pragma mark - ACtions
+- (void)handleLeftBarbuttonItemOnClicked
+{
+    
+}
 - (void)handleChangeTextButtonOnClicked
 {
     @WEAKSELF;
