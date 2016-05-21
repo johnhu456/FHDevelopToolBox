@@ -203,4 +203,9 @@ typedef NS_ENUM(NSUInteger){
     [self fakePushMenuAnimation];
 }
 
+- (void)pushMenuControllerWithAnimated
+{
+    [self handlePushMenuAnimation];
+}
+
 @end

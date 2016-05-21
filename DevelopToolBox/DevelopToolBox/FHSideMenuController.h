@@ -21,4 +21,6 @@
 
 /**切换主视图的主要方法，建议实现*/
 - (void)handlePushNewCenterViewController:(UIViewController *)newController;
+/**显示菜单*/
+- (void)pushMenuControllerWithAnimated:(BOOL)animated;
 @end

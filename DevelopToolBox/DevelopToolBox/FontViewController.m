@@ -181,8 +181,6 @@ static CGFloat const kCellHeight = 90.f;
 #pragma mark - ACtions
 - (void)handleLeftBarbuttonItemOnClicked
 {
-    
-}
 - (void)handleChangeTextButtonOnClicked
 {
     @WEAKSELF;
