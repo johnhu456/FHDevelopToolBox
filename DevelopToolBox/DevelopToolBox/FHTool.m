@@ -9,7 +9,6 @@
 #import "FHTool.h"
 
 @implementation FHTool
-
 + (UIWindow *)getCurrentWindow
 {
     UIWindow *window = [UIApplication sharedApplication].windows[0];
