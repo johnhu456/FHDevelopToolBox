@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FontViewController : UITableViewController
+//字体大小 默认为20
+@property (nonatomic, assign) CGFloat size;
+/**示例文字*/
+@property (nonatomic, strong) NSString *sampleText;
 
 @end

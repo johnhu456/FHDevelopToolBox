@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FontViewController.h"
 
 @interface FontSearchResultViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *resultDataArray;
 
-@property (nonatomic, weak) UIViewController *mainSearchController;
+@property (nonatomic, weak) FontViewController *mainSearchController;
 
 @end

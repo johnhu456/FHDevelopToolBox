@@ -60,7 +60,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *fontName = self.resultDataArray[indexPath.row];
-    FontDetailViewController *detailViewController = [[FontDetailViewController alloc] initWithFontName:fontName];
+    FontDetailViewController *detailViewController = [[FontDetailViewController alloc] initWithFontName:fontName textName:self.mainSearchController.sampleText];
     [self.mainSearchController.navigationController pushViewController:detailViewController animated:YES];
 }
 - (void)didReceiveMemoryWarning {

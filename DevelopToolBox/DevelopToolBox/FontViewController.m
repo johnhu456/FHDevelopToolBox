@@ -33,9 +33,6 @@ static CGFloat const kCellHeight = 90.f;
 
 //@property (nonatomic, strong) UITableView *tableView
 
-/**示例文字*/
-@property (nonatomic, strong) NSString *sampleText;
-
 
 //==========AboutSearch==================
 @property (nonatomic, strong) NSArray *searchedFamilyArray;
@@ -56,6 +53,7 @@ static CGFloat const kCellHeight = 90.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.size = 20;
     self.title = @"All Font";
     self.sampleText = @"SampleText";
     
@@ -146,7 +144,7 @@ static CGFloat const kCellHeight = 90.f;
     NSArray *aFamily = self.fontArray[indexPath.section];
     cell.textLabel.text = self.sampleText;
     cell.detailTextLabel.text = aFamily[indexPath.row];
-    cell.textLabel.font = [UIFont fontWithName:aFamily[indexPath.row] size:20];
+    cell.textLabel.font = [UIFont fontWithName:aFamily[indexPath.row] size:self.size];
     return cell;
 }
 
@@ -175,12 +173,14 @@ static CGFloat const kCellHeight = 90.f;
 
     NSArray *aFamily = self.fontArray[indexPath.section];
     NSString *fontName = aFamily[indexPath.row];
-    FontDetailViewController *detailViewController = [[FontDetailViewController alloc] initWithFontName:fontName];
+    FontDetailViewController *detailViewController = [[FontDetailViewController alloc] initWithFontName:fontName textName:_sampleText];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 #pragma mark - ACtions
-- (void)handleLeftBarbuttonItemOnClicked
-{
+- (void)handleLeftBarbuttonItemOnClicked:(UIBarButtonItem *)button {
+    
+}
+
 - (void)handleChangeTextButtonOnClicked
 {
     @WEAKSELF;
